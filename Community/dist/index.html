@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+
+    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="css/community.css" />
+
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="../bower_components/angular/angular.min.js"></script>
+    <script src="../bower_components/angular-ui-router/angular-ui-router.min.js"></script>
+    <script src="../bower_components/angular-cookies/angular-cookies.min.js"></script>
+    <script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="js/community.js"></script>
+</head>
+<body ng-app="community" ng-controller="IndexCtrl">
+
+    <!-- views will be injected here -->
+    <div ui-view></div>
+
+    <a ui-sref="state1">State 1</a>
+    <a ui-sref="state2">State 2</a>
+    <a ui-sref="state3">State 3</a>
+
+</body>
+</html>
