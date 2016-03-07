@@ -1,0 +1,35 @@
+MAF学习补充说明：
+
+a. MAF 2.2.2支持：
+- Android 4.0.3 or later
+- iOS: XCode 7.2+ and iOS 9+ SDK
+
+b. jdk1.8 for MAF
+
+c.下载Jdeveloper或OEPE：
+http://www.oracle.com/technetwork/developer-tools/maf/downloads/index.html
+
+
+1. MAF官方文档
+http://docs.oracle.com/middleware/maf222/mobile/index.html
+
+2. MAF Tutorials文档（step-by-step）
+http://www.oracle.com/technetwork/developer-tools/maf/learnmore/index.html#tutorials
+
+（1）设置开发环境JDevloper：iOS/Android
+http://docs.oracle.com/cd/E53569_01/tutorials/tut_jdev_maf_setup/tut_jdev_maf_setup.html
+
+（2）设置开发环境Oracle Enterprise Pack for Eclipse：
+http://docs.oracle.com/cd/E53569_01/tutorials/tut_oepe_maf_setup/tut_oepe_maf_setup.html
+
+生成key命令：
+cd C:\jdk1.8.0_65\bin
+keytool -genkey -v -keystore C:\jdk1.8.0_65\bin\mykey.keystore -alias myalias -keyalg RSA -keysize 2048 -validity 10000
+
+
+3. 集成Cordova Plugin文章
+https://blogs.oracle.com/mobile/entry/integrating_cordova_plugin_with_oracle1
+
+
+
+
