@@ -1,0 +1,23 @@
+<div class="page error_business">
+
+  <!-- 头部栏 -->
+  <header class="header common_header">
+    <a href="javascript:history.back();">
+      <div class="back">
+        <div class="back_arrow"></div>
+        <div>返回</div>
+      </div>
+    </a>
+    <div class="confirm_btn" ng-click="errorReport('store')">提交</div>
+    <div class="title">商户信息报错</div>
+  </header>
+
+ <!-- 报错信息条目 -->
+  <div class="detail_infos">
+    <input class="error_input detail_title" ng-model="busiInfo.store_name" value=''></input>
+    <a href="#/error/district_list"><div class="detail_title">商户地区<div class="detail_subtitle">{{ district_name || '无'}}</div><div class="right_arrow"></div></div></a>
+    <a href="#/error/categories"><div class="detail_title">商户类型<div class="detail_subtitle">{{small_name || busiInfo.small_type}}</div><div class="right_arrow"></div></div></a>
+    <input class="error_input detail_title" ng-model="busiInfo.address" value＝''></input>
+    <input class="error_input detail_title" ng-model="busiInfo.tel_phone" value=''></input>
+  </div>
+</div>

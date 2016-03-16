@@ -1,0 +1,94 @@
+<div class="scrollable-content search_filter"  
+  ng-controller="SearchFilterCtrl"
+  ui-state="showSidebar" 
+  ui-show="showSidebar"
+  ui-class="{'filter_sidebar_in':showSidebar}">
+
+  <div class="mask" 
+    ng-click="Ui.turnOff('showSidebar')"></div>
+
+  <div class="filter_side_pane" >
+    <div class="filter_title">
+      <div class="filter_title_name">筛选标准</div>
+      <a href="" ui-turn-on="modal1" class="clearfix extend_area">
+        <div class="question">?</div>
+      </a>
+      
+        <div class="filter_confirm">
+        <a href="" ui-turn-off="showSidebar">确定</a></div>
+      
+    </div> 
+
+    <!-- 选择类型部分 -->
+    <div class="filter_category_section">
+      <div class="filter_category_item category_all" ng-click="check_toggle_all()">
+        <div class="category_name">全部类型</div>
+        <a href="">
+          <div class="icon_check" ng-class="{check_active: check_reserve&&check_icbc&&check_discount}"></div>
+        </a>
+      </div>
+      <!-- 工行 -->
+      <div class="filter_category_item " ng-click="check_icbc=!check_icbc">
+        <div class="category_name">工行服务商户</div>
+        <div class="icon_area">
+          <div class="category_icon icon_yi"></div>
+          <div class="category_icon icon_fen"></div>
+          <div class="category_icon icon_ji"></div>
+        </div>
+         <a href="">
+          <div class="icon_check" ng-class="{check_active: check_icbc}" ></div>
+         </a>
+      </div>
+      <!-- 优惠商户-->
+      <div class="filter_category_item " ng-click="check_discount=!check_discount">
+        <div class="category_name">优惠商户</div>
+         <div class="icon_area">
+          <div class="category_icon icon_gong"></div>
+          <div class="category_icon icon_tuan"></div>
+          <div class="category_icon icon_cu"></div>
+          <div class="category_icon icon_ka"></div>
+        </div>
+          <a href="">
+            <div class="icon_check" ng-class="{check_active: check_discount}"> </div>
+          </a>
+      </div>
+      <!-- 预定商户 -->
+      <div class="filter_category_item " ng-click="check_reserve=!check_reserve">
+        <div class="category_name">预定商户</div>
+         <div class="icon_area">
+          <div class="category_icon icon_ding"></div>
+        </div>
+        <a href="">
+          <div class="icon_check" ng-class="{check_active: check_reserve}" ></div>
+        </a>
+      </div>
+    </div>
+    <div class="avg_consume_title">
+      <p>人均消费<small>（单位：元）</small></p>
+    </div>
+    <div class="avg_consume_range"  ng-controller="Ctrl">
+      <!-- <input type="range" name="points" min="1" max="1000" step="1" value="0" /> -->
+      <slider step="1">
+        <slider-range model="slider.left.value">
+          <div class="slider-handle"><div class="circle_handle"></div></div>
+          <div class="slider-label slider-label-top">{{slider.left.value | number:0 }}</div>
+        </slider-range>
+        <slider-range model="slider.middle.value" min-value="20">
+          <div class="slider-handle"><div class="circle_handle"></div></div>
+          <div class="slider-label">{{slider.left.value + slider.middle.value | number:0 }}</div>
+        </slider-range>
+        <slider-range model="slider.right.value">
+        </slider-range>
+      </slider>
+    </div>
+    <div class="map_choice_title">
+      <p>地图模式</p>
+    </div>
+     <div class="map_choice">
+      <p>是否切换为地图模式</p>
+      <div class="switch ng-isolate-scope switch-transition-enabled ng-valid" ng-class="{active: isMapModel}" ng-click="isMapModel = !isMapModel"><div class="switch-handle"></div>
+      </div>
+    </div>
+  </div>
+
+</div> <!-- end of scrollable content -->

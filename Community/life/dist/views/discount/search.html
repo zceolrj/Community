@@ -1,0 +1,66 @@
+<div class="scrollable" page-title="搜索">
+  <div class="scrollable-content page search">
+    <div class="">
+      <header class="header common_header search_header">
+        <a href="javascript:history.back();">
+          <div class="search_cancel_btn">
+            取消
+          </div>
+        </a>
+        <div class="search_input">
+          <input type="text" title="" placeholder="请输入优惠关键字" ng-model="searchHeaderValue">
+          <div class="close_icon" ng-show="searchHeaderValue" ng-click="searchHeaderValue=''"></div>
+        </div>
+      
+      </header>
+      <div class="search_body">
+        <div class="search_section_title">热门搜索</div>
+      <div class="clearfix">
+        <a href="#/discount/search_result">
+          <div class="col-xs-4 tag_left">
+            <div>松本楼日式烧烤</div>
+          </div>
+        </a>
+        <a href="#/discount/search_result">
+          <div class="col-xs-4 tag_mid">
+            <div>松本楼日式烧烤</div>
+          </div>
+        </a>
+        <a href="#/discount/search_result">
+          <div class="col-xs-4 tag_right">
+            <div>松本楼日式烧烤</div>
+          </div>
+        </a>
+        <a href="#/discount/search_result">
+          <div class="col-xs-4 tag_left">
+            <div>松本楼日式烧烤</div>
+          </div>
+        </a>
+        <a href="#/discount/search_result">
+          <div class="col-xs-4 tag_mid">
+            <div>松本楼日式烧烤</div>
+          </div>
+        </a>
+        <a href="#/discount/search_result">
+          <div class="col-xs-4 tag_right">
+            <div>松本楼日式烧烤</div>
+          </div>
+        </a>
+      </div>
+
+        <div class="search_section_title search_history">搜索历史
+        <span ng-click="showHistory=false">清除历史记录</span>
+        </div>
+      </div>
+      <div class="search_history_record" ng-show="showHistory || showHistory == undefined">
+        <a href="#/discount/search_result">
+        <div>北京烤鸭</div>
+        </a>
+        <a href="#/discount/search_result">
+        <div>局气</div>
+        </a>
+      </div>
+    </div>
+
+  </div> <!-- /scrollable-content -->
+</div>

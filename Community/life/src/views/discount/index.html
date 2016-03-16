@@ -1,0 +1,302 @@
+<div class="scrollable page discount_index">
+  <div class="scrollable-content">
+    <header class="header common_header search_header">
+      <a href="#/locator"><div class="img_btn header_btn_left location_btn">北京</div></a>
+      <div class="index_close_icon" id="close_icon">关闭</div>
+      <div class="search_input">
+        <!-- <input type="text" title="" placeholder="搜索优惠" ng-model="searchHeaderValue"> -->
+        <a href="#/discount/search">
+          <div class="search">
+            <i class="icon_search"></i>
+            <span>搜索优惠活动</span>
+          </div>
+        </a>
+      </div>
+    </header>
+
+    <!-- 工行优惠 -->
+    <div class="title_section icbc_offer bg_white">
+      <div class="section_header">
+        <div class="title">工行卡优惠</div>
+        <a href="#/discount/card_list"><div class="subtitle">更多</div></a>
+      </div>
+      <div class="content clearfix">
+        <ul rn-carousel class="carousel clearfix" rn-carousel-index="categoryIndex">
+       
+          <li>
+            <div class="colums_layout colums_3">
+             <a ng-repeat="cardOffer in cardOfferList" href="#/discount/bank_offer/{{::cardOffer.id}}">
+              <div class="col">
+                <div class="product_sale_vertical">
+                  <div class="discount_title">{{::cardOffer.promotions_title}}</div>
+                 <!--  <div class="discount_name">美食狂欢节</div> -->
+                  <div class="img_wrap">
+                    <img ng-src="{{cardOffer.image_url}}">
+                  </div>
+                </div>
+              </div>
+              </a>
+             <!-- <a href="#/discount/card_offer">
+              <div class="col">
+                <div class="product_sale_vertical">
+                  <div class="discount_title">工行卡8.5折</div>
+                  <div class="discount_name">狂欢星期一</div>
+                  <div class="img_wrap">
+                    <img src="images/discount_monday.png">
+                  </div>
+                </div>
+              </div>
+              </a>
+              <a href="#/discount/bank_offer">
+              <div class="col">
+                <div class="product_sale_vertical">
+                  <div class="discount_title">白金卡6.5折</div>
+                  <div class="discount_name">美食狂欢节</div>
+                  <div class="img_wrap">
+                    <img src="images/discount_food.png">
+                  </div>
+                </div>
+              </div>
+              </a>
+              <a href="#/discount/bank_offer">
+              <div class="col">
+                <div class="product_sale_vertical">
+                  <div class="discount_title">联名双倍积分</div>
+                  <div class="discount_name">南航、海航</div>
+                  <div class="img_wrap">
+                    <img src="images/discount_airport.png">
+                  </div>
+                </div>
+              </div>
+              </a> -->
+            </div>
+          </li>
+          <li>
+            <div class="colums_layout colums_3">
+              <div class="col">
+                <div class="product_sale_vertical">
+                  <div class="discount_title">工行卡8.5折</div>
+                  <div class="discount_name">狂欢星期一</div>
+                  <div class="img_wrap">
+                    <img src="images/discount_monday.png">
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="product_sale_vertical">
+                  <div class="discount_title">白金卡6.5折</div>
+                  <div class="discount_name">美食狂欢节</div>
+                  <div class="img_wrap">
+                    <img src="images/discount_food.png">
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="product_sale_vertical">
+                  <div class="discount_title">联名双倍积分</div>
+                  <div class="discount_name">南航、海航</div>
+                  <div class="img_wrap">
+                    <img src="images/discount_airport.png">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="colums_layout colums_3">
+              <div class="col">
+                <div class="product_sale_vertical">
+                  <div class="discount_title">工行卡8.5折</div>
+                  <div class="discount_name">狂欢星期一</div>
+                  <div class="img_wrap">
+                    <img src="images/discount_monday.png">
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="product_sale_vertical">
+                  <div class="discount_title">白金卡6.5折</div>
+                  <div class="discount_name">美食狂欢节</div>
+                  <div class="img_wrap">
+                    <img src="images/discount_food.png">
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="product_sale_vertical">
+                  <div class="discount_title">联名双倍积分</div>
+                  <div class="discount_name">南航、海航</div>
+                  <div class="img_wrap">
+                    <img src="images/discount_airport.png">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <div class="indicators">
+          <i class="dot" ng-class="{'active':categoryIndex == 0}"></i>
+          <i class="dot" ng-class="{'active':categoryIndex == 1}"></i>
+          <i class="dot" ng-class="{'active':categoryIndex == 2}"></i>
+        </div>
+        <!-- <div class="colums_layout colums_3">
+          <div class="col">
+            <div class="product_sale_vertical">
+              <div class="discount_title">工行卡8.5折</div>
+              <div class="discount_name">狂欢星期一</div>
+              <div class="img_wrap">
+                <img src="images/discount_monday.png">
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="product_sale_vertical">
+              <div class="discount_title">白金卡6.5折</div>
+              <div class="discount_name">美食狂欢节</div>
+              <div class="img_wrap">
+                <img src="images/discount_food.png">
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="product_sale_vertical">
+              <div class="discount_title">联名双倍积分</div>
+              <div class="discount_name">南航、海航</div>
+              <div class="img_wrap">
+                <img src="images/discount_airport.png">
+              </div>
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </div><!-- end of ICBC offer-->
+
+    <!-- 商户优惠 -->
+    <div class="title_section business_offer">
+      <div class="section_header">
+          <div class="title" ng-click="test()" >商户优惠</div>
+      </div>
+      <div class="business_offer_category content">
+        <div class="item">
+          <a href="#/discount/discount_food"><div class="name" id="aa">美食</div></a>
+        </div>
+        <div class="item">
+          <div class="name">KTV</div>
+        </div>
+        <div class="item">
+          <div class="name">电影</div>
+        </div>
+        <div class="item">
+          <div class="name">旅游</div>
+        </div>
+        <div class="item">
+          <div class="name">美食</div>
+        </div>
+        <div class="item">
+          <a href="#/discount/categories"><div class="name more">更多</div></a>
+        </div>
+      </div> 
+    </div> <!-- end of business offer-->
+
+    <!-- 附近优惠 -->
+    <div class="title_section nearby_offer">
+      <div class="section_header">
+        <div class="title" >附近优惠</div>
+      </div>
+      <div class="content">
+        <ul class="thumb_list">
+          <li>
+            <a href="#/discount/business_offer" class="clearfix">
+              <img class="left" src="images/restaurant_qjn.jpg">
+              <div class="right">
+                <div class="top large">俏江南（金融街店）</div>
+                <div class="middle small red">满100减50，优惠及金额封顶200</div>
+                <div class="bottom small gray">金融街 川菜/家常菜</div>
+                <div class="right_top small light_gray">0.7km</div>
+                <div class="right_bottom small light_gray">已浏览17次</div>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="#/discount/customers" class="clearfix">
+              <img class="left" src="images/restaurant_qjn.jpg">
+              <div class="right">
+                <div class="top large">俏江南（金融街店）</div>
+                <div class="middle small gray">代金券1张，可叠加，不限时段</div>
+                <div class="prices">
+                  <div class="price_now">￥120元</div>
+                  <div class="price_before">￥300元</div>
+                </div>
+                <div class="right_top small light_gray">0.7km</div>
+                <div class="right_bottom small light_gray">已购买17次</div>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="#/discount/business_offer" class="clearfix">
+              <img class="left" src="images/restaurant_qjn.jpg">
+              <div class="right">
+                <div class="top large">俏江南（金融街店）</div>
+                <div class="middle small red">闪酷卡消费满100减80</div>
+                <div class="bottom small gray">金融街 川菜/家常菜</div>
+                <div class="right_top small light_gray">0.7km</div>
+                <div class="right_bottom small light_gray">已浏览17次</div>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="#/discount/card_offer" class="clearfix">
+              <img class="left" src="images/restaurant_qjn.jpg">
+              <div class="right">
+                <div class="top large">俏江南（金融街店）</div>
+                <div class="middle none"></div>
+                <div class="bottom small gray">代金券1张，可叠加，不限时段</div>
+              </div>
+            </a>
+          </li>
+
+          <!-- <li>
+            <a href="" class="clearfix">
+              <img class="left" src="images/restaurant_qjn.jpg">
+              <div class="right">
+                <div class="top large">俏江南（金融街店）</div>
+                <div class="middle">
+                  <div class="stars">
+                    <i class="star"></i>
+                    <i class="star"></i>
+                    <i class="star"></i>
+                    <i class="star"></i>
+                    <i class="star star_half"></i>
+                  </div>
+                  <span class="small">127元/人</span>
+                </div>
+                <div class="bottom small gray">金融街 川菜/家常菜</div>
+              </div>
+            </a>
+          </li> -->
+        </ul>
+      </div>
+    </div><!-- end of nearby offer -->
+
+  </div> <!-- end of scrollable-content -->
+  <div class="scrollable-footer" id="foot">
+    <div class="tab_bar">
+      <a href="#/home/index" class="tab">
+        <div class="icon tab_home"></div>
+        <div class="name">首页</div>
+      </a>
+      <a href="#/discount/index" class="tab active">
+        <div class="icon tab_discount" ></div>
+        <div class="name">优惠</div>
+      </a>
+      <a href="#/personal/index" class="tab">
+        <div class="icon tab_profile"></div>
+        <div class="name">我的</div>
+      </a>
+      <a class="tab">
+        <div class="icon tab_setting"></div>
+        <div class="name">更多</div>
+      </a>
+    </div>
+  </div>
+</div>

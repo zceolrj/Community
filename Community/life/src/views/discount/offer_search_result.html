@@ -1,0 +1,165 @@
+<div class="scrollable page search_result">
+  <div class="scrollable-content">
+    
+    <div class="header common_header search_header">
+    <a href="javascript:history.back();">
+      <div class="back">
+        <div class="back_arrow"></div>
+        <div>返回</div>
+      </div>
+      </a>
+      <div class="search_input"><input type="text" title="" placeholder="请输入商户名地点" ng-model="keyword"></div>
+    </div>
+   
+    <div class="search_result_section">
+      <div class="result_title"></div>
+    </div>
+
+    <div class="list_filter_wrap">
+      <div class="list_filter" ui-state="listFilterIndex">
+        <div class="list_filter_category" ng-click="filterToggle(1)" ui-class="{'selected':listFilterIndex == 1 && listFilter}">
+          <div class="name" ng-bind="currentDistrict.districtName || currentDistrict.communityName || '商区'"></div>
+          <i class="fa fa-caret-down" ></i>
+        </div>
+        <div class="list_filter_category"  ng-click="filterToggle(2)" ui-class="{'selected':listFilterIndex == 2 && listFilter}">
+          <div class="name" ng-bind="currentSmallType.small_name || '行业'">美食</div>
+          <i class="fa fa-caret-down"></i>
+        </div>
+        <div class="list_filter_category"  ng-click="filterToggle(3)" ui-class="{'selected':listFilterIndex == 3 && listFilter}">
+          <div class="name">排序</div>
+          <i class="fa fa-caret-down"></i>
+        </div>
+      </div>
+      <div class="drop_down_group" ui-state="listFilter" ui-show="listFilter && listFilterIndex == 1">
+        <div class="side_list_tab">
+          <ui-state id="sideTab1" default="1"></ui-state>
+          <ul class="tabs">
+            <li class="tab tab_left selected" ui-set="{'sideTab1': 1}" ui-class="{'selected': sideTab1==1}">附近</li>
+            <li class="tab tab_left" ui-set="{'sideTab1': 2}" ui-class="{'selected': sideTab1==2}">热门商区</li>
+            <li class="tab tab_left" ui-set="{'sideTab1': 3}" ui-class="{'selected': sideTab1==3}">全部地区</li>
+          </ul>
+          <div class="tab_contents">
+            <ul class="filter_choices" ui-if="sideTab1 == 1">
+              <li>1000米</li>
+              <li>3000米</li>
+              <li>5000米</li>
+            </ul>
+            <ul class="filter_choices" ui-if="sideTab1 == 2">
+              <li 
+                ng-repeat="city in hotCitys"
+                ng-click = "filterByDistrict(city)">{{::city.communityName}}</li>
+            </ul>
+            <ul class="filter_choices" ui-if="sideTab1 == 3">
+              <li 
+                ng-repeat="city in citys"
+                ng-click = "filterByDistrict(city)">{{::city.districtName}}</li>
+            </ul>
+          </div> <!-- end of tab contents -->
+        </div> <!-- end of side list tab -->
+        <div class="mask modal" ui-if="listFilter && listFilterIndex == 1" ng-click="filterToggle(0)" ></div>
+      </div> <!-- end of drop down group -->
+
+
+      <div class="drop_down_group" ui-state="listFilter" ui-show="listFilter  && listFilterIndex == 2">
+        <div class="side_list_tab">
+          <ul class="tabs">
+            <li class="tab tab_left"  
+              ng-class="{'selected': currentType==types}"
+              ng-click="selectType(types)"
+              ng-repeat="types in allTypes">{{::types.big_name}}</li>
+          </ul>
+          <div class="tab_contents">
+            <ul class="filter_choices" 
+              ng-show="currentType==types"
+              ng-repeat="types in allTypes">
+              <li ng-repeat="type in types.small_industry_list"
+                ng-click="filterByType(type)">{{::type.small_name}}</li>
+            </ul>
+          </div> <!-- end of tab contents -->
+        </div> <!-- end of side list tab -->
+        <div class="mask modal" ui-if="listFilter && listFilterIndex == 2" ng-click="filterToggle(0)" ></div>
+      </div> <!-- end of drop down group -->
+
+
+      <div class="drop_down_group" ui-state="listFilter" ui-show="listFilter && listFilterIndex == 3">
+       <div class="side_list_tab">
+          <ui-state id="sideTab3" default="1"></ui-state>
+          <div class="tab_contents sort_content">
+            <ul class="filter_choices " ui-if="sideTab3 == 1">
+              <li>星级最高</li>
+              <li>人均最低</li>
+              <li>人均最高</li>
+              <li>评价最好</li>
+              <li>口味最佳</li>
+             
+            </ul>
+          </div> <!-- end of tab contents -->
+        </div> <!-- end of side list tab -->
+        <div class="mask modal" ui-if="listFilter && listFilterIndex == 3" ng-click="filterToggle(0)" ></div>
+      </div> <!-- end of drop down group -->
+    </div>
+    <!-- 无搜索结果 -->
+    <div class="no_search_result" 
+      ng-show="keyword"
+      ng-include="'views/widget/no_search_result.html'"></div>
+
+    <!-- 所有商家 -->
+
+    <div class="title_section brand_products" ng-show="!keyword" ng-repeat="offer in offerList">
+      <div class="section_header">
+        <div class="title">{{::offer.store_code}}</div>
+        <div class="subtitle">{{::offer.distance}}m</div>
+      </div>
+      <div class="content clearfix" ui-state="brandProductsMore">
+        <ul class="product_list">
+          <li ng-repeat="store in offer.store_list | limitTo: 2">
+            <a href="#/discount/customers" class="list_product_item clearfix">
+              <img class="left" ng-src="{{store.image_url}}">
+              <div class="right">
+                <div class="title">{{::store.title}}</div>
+                <div class="prices">
+                  <div class="price_now">￥{{::store.n_price}}元</div>
+                  <div class="price_before">￥{{::store.o_price}}元</div>
+                </div>
+                <div class="sold">已购买{{::store.buy_count}}次</div>
+              </div>
+            </a>
+          </li>
+          <div ng-show="showList[1]">
+            <li ng-repeat="store in offer.store_list" ng-show="$index > 1">
+              <a href="#/discount/customers" class="list_product_item clearfix">
+                <img class="left" ng-src="{{store.image_url}}">
+                <div class="right">
+                  <div class="title">{{::store.title}}</div>
+                  <div class="prices">
+                    <div class="price_now">￥{{::store.n_price}}元</div>
+                    <div class="price_before">￥{{::store.o_price}}元</div>
+                  </div>
+                  <div class="sold">已购买{{::store.buy_count}}次</div>
+                </div>
+              </a>
+            </li>
+          </div>
+          <a href="" ng-show="offer.store_list.length > 2">
+            <div class="more" ui-toggle="brandProductsMore" ng-click="showList[1]=!showList[1]">
+              <div class="get_more_content">
+                <div class="get_more_title"><span ng-show="showList[1]">收起</span><span ng-show="!showList[1]">更多</span> <div class="fa fa-angle-up" ng-class="{rotate180:!showList[1]}" ></div></div>
+                
+               
+                <div class="clearfix"></div>
+              </div>
+            </div> 
+          </a>
+        </ul>
+
+
+        <!-- <div class="more" ui-toggle="brandProductsMore" ui-class="{expended:brandProductsMore}">
+          <span ui-if="!brandProductsMore">更多</span>
+          <span ui-if="brandProductsMore">收起</span>
+        <i class="fa fa-angle-down"></i></div> -->
+
+      </div> <!-- end of content -->
+    </div><!-- end of products-->
+
+  </div>
+</div>

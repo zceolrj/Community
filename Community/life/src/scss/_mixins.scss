@@ -1,0 +1,87 @@
+
+//border mixin
+@mixin retina_border_bottom($width:1px, $style:solid, $color:#efefef){
+  border-bottom: $width $style $color;
+  @media (-webkit-min-device-pixel-ratio: 2){
+    border-bottom: $width $style $color;
+  }
+}
+// @media 
+//   only screen and (-webkit-min-device-pixel-ratio: 2),
+//   only screen and (   min--moz-device-pixel-ratio: 2),
+//   only screen and (     -o-min-device-pixel-ratio: 2/1),
+//   only screen and (        min-device-pixel-ratio: 2),
+//   only screen and (                min-resolution: 192dpi),
+//   only screen and (                min-resolution: 2dppx){
+//     border-right: $width/2 $style $color;
+//   }
+
+@mixin retina_border_top($width:1px, $style:solid, $color:#efefef){
+  border-top: $width $style $color;
+  @media (-webkit-min-device-pixel-ratio: 2){
+    border-top: $width $style $color;
+  }
+}
+@mixin retina_border_left($width:1px, $style:solid, $color:#efefef){
+  border-left: $width $style $color;
+  @media (-webkit-min-device-pixel-ratio: 2){
+    border-left: $width $style $color;
+  }
+}
+@mixin retina_border_right($width:1px, $style:solid, $color:#efefef){
+  border-right: $width $style $color;
+  @media (-webkit-min-device-pixel-ratio: 2){
+    border-right: $width $style $color;
+  }
+}
+@mixin retina_border($width:1px, $style:solid, $color:#efefef){
+    border: $width $style $color;
+  @media (-webkit-min-device-pixel-ratio: 2){
+    border: $width $style $color;
+  }
+
+}
+
+
+//placeholder样式
+@mixin placeholder_style($text-align){
+  &::-webkit-input-placeholder{
+    text-align:$text-align;
+    }
+  &::-moz-placeholder{
+    text-align:$text-align;
+    }
+
+}
+@mixin clearfix(){
+  &:after{
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+  }
+}
+
+@mixin transform($style...){
+  transform: $style;
+  -ms-transform: $style; /* IE */
+  -moz-transform: $style; /* Firefox */
+  -webkit-transform: $style; /* Safari and Chrome */
+  -o-transform: $style; /* Opera */
+}
+
+@mixin transition($style...){
+  transition: $style;
+  -moz-transition: $style; /* Firefox 4 */
+  -webkit-transition: $style; /* Safari 和 Chrome */
+  -o-transition: $style; /* Opera */
+}
+
+@mixin opacity($style:0.5){
+  filter: alpha(opacity = $style);       /* IE */
+  -moz-opacity:$style;              /* 老版Mozilla */
+  -khtml-opacity:$style;              /* 老版Safari */
+  opacity: $style;
+}

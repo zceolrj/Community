@@ -1,0 +1,56 @@
+<div class="scrollable page my_comment">
+<!-- 内容 -->
+  <div class="scrollable-content">
+    
+    <header class="header common_header">
+      <a href="javascript:history.back();">
+        <div class="back">
+          <div class="back_arrow"></div>
+          <div>返回</div>
+        </div>
+      </a>
+      <a href="#/review/comment_personal" class="confirm_btn" >编辑</a>
+      <div class="title">我的点评</div>
+    </header>
+
+    <div class="comment_list" ng-class="{edit:isEditing}">
+      <div class="title_section review comment">
+        
+        <div class="section_header">
+          <div class="title" ng-bind="::comment.business"></div>
+        </div>
+        <div class="content">
+          <div class="star_area">
+            <span class="star" 
+              ng-class="{
+                star_gray: comment.star<1
+              }"></span>
+            <span class="star" 
+              ng-class="{
+                star_gray: comment.star<2
+              }"></span>
+            <span class="star" 
+              ng-class="{
+                star_gray: comment.star<3
+              }"></span>
+            <span class="star" 
+              ng-class="{
+                star_gray: comment.star<4
+              }"></span>
+            <span class="star" 
+              ng-class="{
+                star_gray: comment.star<5
+              }"></span>
+          </div>
+
+          <div class="time" ng-bind="::comment.time"></div>
+          <div class="comment_info">
+          口味<span ng-bind="::comment.starTaste"></span>（<span ng-bind="::des[comment.starTaste - 1]"></span>）
+          环境<span ng-bind="::comment.starEnv"></span>（<span ng-bind="::des[comment.starEnv - 1]"></span>）
+          服务<span ng-bind="::comment.starSrvs"></span>（<span ng-bind="::des[comment.starSrvs - 1]"></span>）</div>
+          <div class="text" ng-bind="::comment.content"></div>
+        </div>
+      </div>
+    </div>  
+  </div><!--  scrollable content -->
+</div>

@@ -1,0 +1,66 @@
+<div class="scrollable page locator">
+  <div class="scrollable-header">
+    <header class="header common_header">
+      <a href="javascript:history.back();">
+        <div class="back">
+          <div class="back_arrow"></div>
+          <div>返回</div>
+        </div>
+      </a>
+      <div class="title">定位</div>
+    </header>
+
+    <div class="search_bar">
+      <div class="input_wrap">
+        <input type="text" title="" placeholder="请输入城市名或拼音"
+          ng-model="cityKeyword"
+          ng-focus="toggleearchPane(true)"
+          ng-blur="toggleearchPane(false)">
+      </div>
+    </div> <!--  end of search bar -->
+
+    <div class="gps_location">
+      <div class="city">北京</div>
+      <div class="tip">GPS定位</div>
+    </div>
+
+    <div class="side_bar" 
+      ng-show="!searchPaneShow && !cityKeyword">
+      <span ng-repeat="alpha in getAlphas()" ng-click="locate('city'+alpha)" ng-bind="alpha"></span>
+    </div>
+  </div>
+  <div class="scrollable-content" ui-scrollable id="LocatorScrollableContent" ng-show="!searchPaneShow && !cityKeyword">
+    <div class="content_main">
+        <div class="hot_city">
+          <div class="title">热门城市</div>
+          <div class="clearfix">
+            <div class="col-xs-4" ng-repeat="hCity in hotCity" ng-class="{'tag_left': $index % 3 == 0,'tag_mid': $index % 3 == 1,'tag_right': $index % 3 == 2}">
+              <div ng-bind="hCity.city_name" ng-click="doChooseAddress(hCity.city_code,hCity.city_name)" id="{{hCity.city_code}}"></div>
+            </div>
+          </div>
+      </div>
+
+      <div class="city_search_list">
+        <div class="letter" ng-repeat-start="alpha in getAlphas()" id="city{{alpha}}" ng-bind="alpha"></div>
+        <ul ng-repeat-end>
+          <li ng-repeat="city in areaInfo[alpha]" ng-bind="city.name" ng-click="doChooseAddress(city.code,city.name)"></li>
+        </ul>
+      </div>
+
+    </div>
+      
+  </div><!--  end of scrollable content -->
+  <div class="scrollable-content" id="city_search_result" ng-show="searchPaneShow || cityKeyword">
+    <div class="search_history_record" ng-show="!cityKeyword">
+      <div>北京烤鸭</div>
+      <div>局气</div>
+      
+    </div>
+    <div class="city_search_result" ng-show="cityKeyword">
+      <ul>
+        <li ng-repeat="slist in searchResultList | filter: cityKeyword" ng-bind="slist.city_name"></li>
+      </ul>
+    </div>
+      
+  </div><!--  end of scrollable content -->
+</div>

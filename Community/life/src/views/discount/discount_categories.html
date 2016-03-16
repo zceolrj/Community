@@ -1,0 +1,87 @@
+<div class="scrollable">
+  <div class="scrollable-content page categories">
+      <header class="header common_header search_header">
+        <a href="javascript:history.back();" class="">
+          <div class="back">
+            <div class="back_arrow"></div>
+            <div>返回</div>
+          </div>
+        </a>
+       <div class="title">全部分类</div>
+      </header>
+      <ul class="categories_body">
+        <li class="categories_item clearfix">
+          <div class="categories_item_head clearfix">
+            <div class="head_icon icon_all_category_hot"></div>
+            <div class="head_title">热门分类</div>
+          </div> 
+          <div class="categories_item_body">
+            <ul class="categories_item_list">
+              <a href="#/discount/search_result"><li class="list_item col-xs-3">小吃</li></a>
+              <a href="#/discount/search_result"><li class="list_item col-xs-3">KTV</li></a>
+              <a href="#/discount/search_result"><li class="list_item col-xs-3">足疗</li></a>
+              <a href="#/discount/search_result"><li class="list_item col-xs-3">景点</li></a>
+              <a href="#/discount/search_result"><li class="list_item col-xs-3">咖啡</li></a>
+              <a href="#/discount/search_result"><li class="list_item col-xs-3">美发</li></a>
+              <a href="#/discount/search_result"><li class="list_item col-xs-3">火锅</li></a>
+              <a href="#/discount/search_result"><li class="list_item col-xs-3">西餐</li></a>
+            </ul>
+          </div>     
+        </li>
+         <li class="categories_item clearfix">
+          <div class="categories_item_head clearfix">
+            <div class="head_icon icon_all_category_food"></div>
+            <div class="head_title">美食</div>
+          </div> 
+          <div class="categories_item_body">
+            <ul class="categories_item_list">
+              <li class="list_item col-xs-3">小吃</li>
+              <li class="list_item col-xs-3">景点</li>
+              <li class="list_item col-xs-3">咖啡</li>
+              <li class="list_item col-xs-3">美发</li>
+              <li class="list_item col-xs-3">火锅</li>
+              <li class="list_item col-xs-3">西餐</li>
+              <li class="list_item col-xs-3">小吃</li>
+              <div ng-show="showList[0]">
+               <li class="list_item col-xs-3">足疗</li>
+              <li class="list_item col-xs-3">景点</li>
+              <li class="list_item col-xs-3">咖啡</li>
+              <li class="list_item col-xs-3">美发</li>
+              <li class="list_item col-xs-3">火锅</li>
+              <li class="list_item col-xs-3">西餐</li>
+              <li class="list_item col-xs-3">小吃</li>
+              </div>
+               <li class="list_item col-xs-3" ng-show="!showList[0]" ng-click="showList[0]=!showList[0]"><i class="fa fa-angle-down"></i></li>
+            </ul>
+          </div>     
+        </li>
+         <li class="categories_item clearfix">
+          <div class="categories_item_head clearfix">
+            <div class="head_icon icon_all_category_snack"></div>
+            <div class="head_title">小吃</div>
+          </div> 
+          <div class="categories_item_body">
+            <ul class="categories_item_list">
+              <li class="list_item col-xs-3">足疗</li>
+              <li class="list_item col-xs-3">景点</li>
+              <li class="list_item col-xs-3">咖啡</li>
+              <li class="list_item col-xs-3">美发</li>
+              <li class="list_item col-xs-3">火锅</li>
+              <li class="list_item col-xs-3">西餐</li>
+              <li class="list_item col-xs-3">小吃</li>
+                <div ng-show="showList[1]">
+              <li class="list_item col-xs-3">小吃</li>
+              <li class="list_item col-xs-3">足疗</li>
+              <li class="list_item col-xs-3">景点</li>
+              <li class="list_item col-xs-3">咖啡</li>
+              <li class="list_item col-xs-3">美发</li>
+              <li class="list_item col-xs-3">火锅</li>
+              <li class="list_item col-xs-3">西餐</li>
+              </div>
+               <li class="list_item col-xs-3" ng-show="!showList[1]" ng-click="showList[1]=!showList[1]"><i class="fa fa-angle-down"></i></li>
+            </ul>
+          </div>     
+        </li>
+      </ul>
+  </div>
+</div>

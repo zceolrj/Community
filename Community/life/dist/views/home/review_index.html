@@ -1,0 +1,169 @@
+<div class="scrollable page review_index">
+<!-- 内容 -->
+  <div class="scrollable-content">
+
+    <header class="header common_header">
+      <a href="javascript:history.back();">
+      <div class="back">
+        <div class="back_arrow"></div>
+        <div>返回</div>
+      </div>
+      </a>
+      <div class="title">全部点评</div>
+    </header>
+  
+    <!-- 全部点评导航栏 -->
+   <div class="list_filter_wrap review_list_filter_wrap">
+      <div class="list_filter review_top_navi" ui-state="listFilterIndex">
+        <div class="list_filter_category"  ng-click="filterToggle(2)" ui-class="{'selected':listFilterIndex == 2 && listFilter}">
+          <div class="name" >星级</div>
+          <i class="fa fa-caret-down"></i>
+        </div>
+        <div class="list_filter_category"  ng-click="filterToggle(3)" ui-class="{'selected':listFilterIndex == 3 && listFilter}">
+          <div class="name">排序</div>
+          <i class="fa fa-caret-down"></i>
+        </div>
+      </div>
+      <div class="drop_down_group" ui-state="listFilter" ui-show="listFilter  && listFilterIndex == 2">
+         <div class="side_list_tab">
+          <ui-state id="sideTab3" default="1"></ui-state>
+          <div class="tab_contents sort_content">
+            <ul class="filter_choices " ui-if="sideTab3 == 1">
+              <li>全部</li>
+              <li>五星级</li>
+              <li>四星级</li>
+              <li>三星级</li>
+              <li>二星级</li>
+              <li>一星级</li>
+
+             
+            </ul>
+          </div> <!-- end of tab contents -->
+        </div> <!-- end of side list tab -->
+        <div class="mask modal" ui-if="listFilter && listFilterIndex == 2" ng-click="filterToggle(0)" ></div>
+      </div> <!-- end of drop down group -->
+
+
+      <div class="drop_down_group" ui-state="listFilter" ui-show="listFilter && listFilterIndex == 3">
+        <div class="side_list_tab">
+          <ui-state id="sideTab3" default="1"></ui-state>
+          <div class="tab_contents sort_content">
+            <ul class="filter_choices " ui-if="sideTab3 == 1">
+              <li>时间倒序</li>
+              <li>人均最低</li>
+              <li>人均最高</li>
+              <li>评价最好</li>
+              <li>口味最佳</li>
+              <li>点评最多</li>
+             
+            </ul>
+          </div> <!-- end of tab contents -->
+        </div> <!-- end of side list tab -->
+        <div class="mask modal" ui-if="listFilter && listFilterIndex == 3" ng-click="filterToggle(0)" ></div>
+      </div> <!-- end of drop down group -->
+    </div>
+     <!-- 点评列表 -->
+    <div class="review_list">
+      <div class="review_list_item" ng-class="{open_item:showText==0}">
+        <div class="title_section review">
+          <div class="content">
+            <div class="img_wrap">
+              <img src="images/portrait.png">
+            </div>
+            <div class="right">
+              <div class="title">张三Harry</div>
+              <div class="star_area">
+              <span class="star_full"></span><span class="star_full"></span><span class="star_full"></span><span class="star_full"></span><span class="star_half"></span>
+              </div>
+              <div class="price">200元/人</div>
+              <div class="desc" >菜很好吃，服务非常赞。还有双重优惠，非常划算。不过人还是不少，如果没有提前预定，需要排队，建议提前约好时间，预留座。菜很好吃，服务非常赞。其务非常务非常...
+              <span ng-show="showText==0">菜很好吃，服务非常赞。还有双重优惠，非常划算。</span>
+               <span class="blue" ng-click="GetText(0)"><span ng-show="showText!=0" >查看全文</span><span ng-show="showText==0">收起</span><i class="fa fa-chevron-down"></i></span>
+              <a href="#/review/album">
+                <ul>
+                  <li><img src="images/restaurant_qjn.jpg" alt=""></li>
+                  <li><img src="images/restaurant_qjn.jpg" alt=""></li>
+               
+                  <li class="list_last_img list_last_img1">
+                    <img src="images/restaurant_qjn.jpg" alt="">
+                    <div class="rest_img_num">还剩13张</div>
+                  </li>
+                </ul>
+              </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review_list_item" ng-class="{open_item:showText==1}">
+          <div class="title_section review">
+            <div class="content">
+              <div class="img_wrap">
+                <img src="images/portrait.png">
+              </div>
+              <div class="right">
+                <div class="title">张三Harry</div>
+                <div class="star_area">
+                <span class="star_full"></span><span class="star_full"></span><span class="star_full"></span><span class="star_full"></span><span class="star_half"></span>
+                </div>
+                <div class="price">200元/人</div>
+                <div class="desc" >菜很好吃，服务非常赞。还有双重优惠，非常划算。不过人还是不少，如果没有提前预定，需要排队，建议提前约好时间，预留座。菜很好吃，服务非常赞。其务非常务非常...
+                <span ng-show="showText==1">菜很好吃，服务非常赞。还有双重优惠，非常划算。</span>
+                 <span class="blue" ng-click="GetText(1)"><span ng-show="showText!=1" >查看全文</span><span ng-show="showText==1">收起</span><i class="fa fa-chevron-down"></i></span>
+                <a href="#/review/album"><ul>
+                  <li><img src="images/restaurant_qjn.jpg" alt=""></li>
+                  <li><img src="images/restaurant_qjn.jpg" alt=""></li>
+                
+                  <li class="list_last_img list_last_img1">
+                    <img src="images/restaurant_qjn.jpg" alt="">
+                    <div class="rest_img_num">还剩13张</div>
+                  </li>
+                </ul></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="review_list_item" ng-class="{open_item:showText==2}">
+          <div class="title_section review">
+            <div class="content">
+              <div class="img_wrap">
+                <img src="images/portrait.png">
+              </div>
+              <div class="right">
+                <div class="title">张三Harry</div>
+                <div class="star_area">
+                <span class="star_full"></span><span class="star_full"></span><span class="star_full"></span><span class="star_full"></span><span class="star_half"></span>
+                </div>
+                <div class="price">200元/人</div>
+                <div class="desc" >菜很好吃，服务非常赞。还有双重优惠，非常划算。不过人还是不少，如果没有提前预定，需要排队，建议提前约好时间，预留座。菜很好吃，服务非常赞。其务非常务非常...
+                <span ng-show="showText==2">菜很好吃，服务非常赞。还有双重优惠，非常划算。</span>
+                 <span class="blue" ng-click="GetText(2)"><span ng-show="showText!=2" >查看全文</span><span ng-show="showText==2">收起</span><i class="fa fa-chevron-down"></i></span>
+                <a href="#/review/album">
+                  <ul>
+                    <li><img src="images/restaurant_qjn.jpg" alt=""></li>
+                    <li><img src="images/restaurant_qjn.jpg" alt=""></li>
+        
+                    <li class="list_last_img list_last_img1">
+                      <img src="images/restaurant_qjn.jpg" alt="">
+                      <div class="rest_img_num">还剩13张</div>
+                    </li>
+                  </ul>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!--end of review_list  -->
+    </div>
+
+
+
+
+    <!-- 底部分割 -->
+  </div>
+</div> 

@@ -1,0 +1,51 @@
+<div class="scrollable page business_recommend">
+<!-- 内容 -->
+  <div class="scrollable-content">
+    
+    <header class="header common_header search_header">
+      <a href="javascript:history.back();">
+      <div class="back">
+        <div class="back_arrow"></div>
+        <div>返回</div>
+      </div>
+      </a>
+      <div class="title">推荐商户</div>
+    </header>
+    <!-- 所有商家 -->
+    <div class="content clearfix">
+      <ul class="thumb_list"  >
+        <li ng-repeat="store in storeList">
+          <a href="#/business/index">
+            <img class="left"
+              ng-src="{{store.image_url}}">
+            <div class="right">
+              <div class="top large"
+                ng-bind="store.mer_name"></div>
+              <div class="middle">
+                <div class="stars">
+                  <div class="star" ng-class="{star_gray: store.dcmt_level<1}"></div>
+                  <div class="star" ng-class="{star_gray: store.dcmt_level<2}"></div>
+                  <div class="star" ng-class="{star_gray: store.dcmt_level<3}"></div>
+                  <div class="star" ng-class="{star_gray: store.dcmt_level<4}"></div>
+                  <div class="star" ng-class="{star_gray: store.dcmt_level<5}"></div>
+                </div>
+              </div>
+              <div class="bottom small gray">
+                {{::store.address}} {{::store.small_type}}
+              </div>
+              <div class="right_bottom small light_gray" ng-bind="::store.distance"></div>
+              <div class="other_info">
+                <div class="top none icon_yi"
+                  ng-show="store.isflag"></div>
+                <div class="middle small avg_price">{{::store.price}}元/人</div>
+              </div>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div> <!-- end of content -->
+  </div>
+
+
+
+      

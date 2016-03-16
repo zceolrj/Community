@@ -1,0 +1,137 @@
+<div class="scrollable page district_list">
+  <div class="scrollable-content">
+    <header class="header common_header">
+     <a href="javascript:history.back();">
+        <div class="back">
+          <div class="back_arrow"></div>
+          <div>返回</div>
+        </div>
+    </a>
+    
+    <div class="confirm_btn">确定</div>
+    <div class="title">地区列表</div>
+    </header>
+
+    <!-- 显示地区列表tab -->
+   <!--  <div class="list_body" ui-state="district_list_tab" ui-default='1'>
+     
+       <ul class=" tab_title_area">
+          <li ui-class="{'active': district_list_tab == 1)}">
+            <a ui-set="{'district_list_tab': 1}">全部区域</a>
+          </li>
+          <li ui-class="{'active': district_list_tab == 2)}">
+            <a ui-set="{'district_list_tab': 2}">朝阳区</a>
+          </li>
+       </ul>
+
+
+       <ul class="tab_content_area"> 
+         <li ui-if="district_list_tab == 1"></li>
+         <li ui-if="district_list_tab == 2"></li>
+       </ul>
+
+      
+
+    </div> -->
+<div class="list_body">
+  <ul class="tab_title_area" ui-state='district_list_Tab' ui-default='1'>
+     <a><li ui-class="{'active': district_list_Tab == 1}" ui-set="{'district_list_Tab': 1}" class="tab_title">全部地区</li></a>
+     <a><li ui-class="{'active': district_list_Tab == 2}" ui-set="{'district_list_Tab': 2}" class="tab_title"> 朝阳区</li></a>
+     <a><li ui-class="{'active': district_list_Tab == 3}" ui-set="{'district_list_Tab': 3}" class="tab_title">西城区</li></a>
+     <a><li ui-class="{'active': district_list_Tab == 4}" ui-set="{'district_list_Tab': 4}" class="tab_title">丰台区</li></a>
+     <a><li ui-class="{'active': district_list_Tab == 5}" ui-set="{'district_list_Tab': 5}" class="tab_title"> 海淀区</li></a>
+     <a><li ui-class="{'active': district_list_Tab == 6}" ui-set="{'district_list_Tab': 6}" class="tab_title">石景山区</li></a>
+     <a><li ui-class="{'active': district_list_Tab == 7}" ui-set="{'district_list_Tab': 7}" class="tab_title">昌平区</li></a>
+     <a><li ui-class="{'active': district_list_Tab == 8}" ui-set="{'district_list_Tab': 8}" class="tab_title">通州区</li></a>
+     <a><li ui-class="{'active': district_list_Tab == 9}" ui-set="{'district_list_Tab': 9}" class="tab_title">大兴区</li></a>
+     <a><li ui-class="{'active': district_list_Tab == 10}" ui-set="{'district_list_Tab': 10}" class="tab_title">房山区</li></a>
+     <a><li ui-class="{'active': district_list_Tab == 11}" ui-set="{'district_list_Tab': 11}" class="tab_title">顺义区</li></a>
+     <a><li ui-class="{'active': district_list_Tab == 12}" ui-set="{'district_list_Tab': 12}" class="tab_title">门头沟区</li></a>
+  </ul>
+
+  <ul class="tab_content_area">
+    <li ui-if="district_list_Tab == 1">
+      <ul>
+        <li>
+          <div class="tab_content_title"><div>A</div></div>
+          <ul class="tab_content_ul">
+            <li class="tab_content_item" ng-click="setErrorDistrict(1,'安贞')">安贞</li>
+            <li class="tab_content_item" ng-click="setErrorDistrict(1,'安华桥')">安华桥</li>
+          </ul>
+        </li>
+        <li>
+          <div class="tab_content_title"><div>B</div></div>
+          <ul class="tab_content_ul">
+            <li class="tab_content_item" ng-click="setErrorDistrict(1,'安贞')">安贞</li>
+            <li class="tab_content_item" ng-click="setErrorDistrict(1,'安华桥')">安华桥</li>
+          </ul>
+        </li>
+        <li>
+          <div class="tab_content_title"><div>C</div></div>
+          <ul class="tab_content_ul">
+            <li class="tab_content_item" ng-click="setErrorDistrict(1,'安贞')">安贞</li>
+            <li class="tab_content_item" ng-click="setErrorDistrict(1,'安华桥')">安华桥</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+
+    <li ui-if="district_list_Tab == 2">
+      <ul>
+        <li>
+          <div class="tab_content_title"><div>A</div></div>
+          <ul class="tab_content_ul">
+            <li class="tab_content_item">安防</li>
+            <li class="tab_content_item">鞍山</li>
+          </ul>
+        </li>
+        <li>
+          <div class="tab_content_title"><div>B</div></div>
+          <ul class="tab_content_ul">
+            <li class="tab_content_item">安防</li>
+            <li class="tab_content_item">鞍山</li>
+          </ul>
+        </li>
+        <li>
+          <div class="tab_content_title"><div>C</div></div>
+          <ul class="tab_content_ul">
+            <li class="tab_content_item">安防</li>
+            <li class="tab_content_item">鞍山</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+
+    <li ui-if="district_list_Tab == 3">
+      <ul>
+        <li>
+          <div class="tab_content_title"><div>A</div></div>
+          <ul class="tab_content_ul">
+            <li class="tab_content_item">安静</li>
+            <li class="tab_content_item">安逸</li>
+          </ul>
+        </li>
+        <li>
+          <div class="tab_content_title"><div>B</div></div>
+          <ul class="tab_content_ul">
+            <li class="tab_content_item">安静</li>
+            <li class="tab_content_item">安逸</li>
+          </ul>
+        </li>
+        <li>
+          <div class="tab_content_title"><div>C</div></div>
+          <ul class="tab_content_ul">
+            <li class="tab_content_item">安静</li>
+            <li class="tab_content_item">安逸</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+</div>
+
+
+
+  </div>
+</div>
